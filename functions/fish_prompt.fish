@@ -1,4 +1,5 @@
 function fish_prompt
+   set last_cmd $status
 	set_color yellow
    printf '%s' (whoami)
    set_color normal
@@ -25,6 +26,12 @@ function fish_prompt
    echo
    if test $VIRTUAL_ENV
        printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
+   end
+
+   if test $last_cmd -eq 0
+      set_color green
+   else
+      set_color red
    end
    printf '↪ '
    set_color normal
