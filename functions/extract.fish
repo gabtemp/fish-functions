@@ -17,7 +17,7 @@ function extract --argument-names file --description 'Extracts a compressed file
             tar xvjf $file
         case "*.tgz"
             tar xvzf $file
-        case "*.zip"
+        case "*.zip" "*.jar" "*.ear" "*.war"
             unzip $file
         case "*.Z"
             uncompress $file

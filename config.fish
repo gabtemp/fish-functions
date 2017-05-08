@@ -1,4 +1,5 @@
 eval (python3 -m virtualfish)
+thefuck --alias | source
 
 if test ! -e /tmp/$USER
     mkdir /tmp/$USER
